@@ -66,4 +66,3 @@ def atomic_torch_save(payload: dict[str, Any], path: Path) -> None:
     temporary = path.with_suffix(path.suffix + f".{os.getpid()}.tmp")
     torch.save(payload, temporary)
     os.replace(temporary, path)
-
